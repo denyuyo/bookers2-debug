@@ -31,11 +31,11 @@
         <% else %>
           <li>
             <%= link_to root_path,class: 'nav-link text-light' do %>
-              <i class="fas fa-home"></i> home
+              <i class="fas fa-home"></i> Home
             <% end %>
           </li>
           <li>
-            <%= link_to about_path,class: 'nav-link text-light' do %>
+            <%= link_to home_about_path,class: 'nav-link text-light' do %>
               <i class="fas fa-link"></i> about
             <% end %>
           </li>
@@ -50,6 +50,7 @@
             <% end %>
           </li>
         <% end %>
+         <%= yield %>
         </ul>
       </div>
     </div>
