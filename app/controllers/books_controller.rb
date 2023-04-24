@@ -51,6 +51,10 @@ class BooksController < ApplicationController
     @book.destroy
     redirect_to books_path
   end
+  
+  def favorites
+   @books = current_user.favorites_books
+  end
 
   private
 
