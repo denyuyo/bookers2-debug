@@ -1,5 +1,0 @@
-<% if current_user.favorite?(book) %>
- <%= render 'unlike', { book: book } %>
-<% else %>
- <%= render 'like', { book: book } %>
-<% end %>

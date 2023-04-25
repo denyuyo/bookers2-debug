@@ -1,11 +1,13 @@
-<% if book.favorited_by?(current_user) %>
-<%= link_to  book_favorite_path(book), method: :delete do %>
-  <i class="fas fa-heart"></i>
-  <%= book.favorite.count %>
-<% end %>
-<% else %>
-<%= link_to book_favorite_path(book), method: :book do %>
-  <i class="far fa-heart"></i>
-  <%= book.favorites.count %>
-<% end %>
+<% if @book.favorite_by?(current_user) %>
+  <p>
+    <%= link_to book_favorites_path(@book), method: :delete do %>
+      ♥<%= @book.favorites.count %> いいね
+    <% end %>
+  </p>
+  <% else %>
+  <p>
+    <%= link_to book_favorites_path(@book), method: :post do %>
+      ♡<%= @book.favorites.count %> いいね
+    <% end %>
+  </p>
 <% end %>
