@@ -15,6 +15,7 @@ class User < ApplicationRecord
   def get_profile_image
     (profile_image.attached?) ? profile_image : 'no_image.jpg'
   end
-  
-  
+  def already_favorited?(book)
+    self.favorites.exists?(book_id: book.id)
+  end
 end
